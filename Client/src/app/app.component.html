@@ -1,19 +1,20 @@
 <nb-layout>
   <nb-layout-header fixed>
     <!-- Insert header here -->
-    <h1>Welcome to Nebular-App</h1>
+
+    <h1 i18n="heading|greetings@@introductionHeader">Welcome to Nebular-App</h1>
   </nb-layout-header>
 
   <nb-layout-column>
-    <h1>
-      Hi ALL fvbk
+    <h1 i18n="@@myId">
+      Hi ALL
       <p>{{ companies$ | async }}</p>
     </h1>
   </nb-layout-column>
 
   <nb-layout-footer fixed>
     <!-- Insert footer here -->
-    <h1>Thank You, Visit again</h1>
+    <h1 i18n="footer|thankyou@@thankyou">Thank You, Visit again</h1>
   </nb-layout-footer>
 </nb-layout>
 <br />

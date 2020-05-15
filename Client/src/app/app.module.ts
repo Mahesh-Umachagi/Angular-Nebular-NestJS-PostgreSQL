@@ -8,6 +8,8 @@ import { NbEvaIconsModule } from "@nebular/eva-icons";
 import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
 import { SampleComponent } from "./sample/sample.component";
+import { registerLocaleData } from "@angular/common";
+import localeFr from "@angular/common/locales/fr";
 
 @NgModule({
   declarations: [AppComponent, SampleComponent],
@@ -25,3 +27,5 @@ import { SampleComponent } from "./sample/sample.component";
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+// the second parameter 'fr-FR' is optional
+registerLocaleData(localeFr, "fr-FR");
