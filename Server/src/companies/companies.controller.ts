@@ -1,4 +1,4 @@
-import { Controller } from '@nestjs/common';
+import { Controller, UsePipes, ValidationPipe } from '@nestjs/common';
 import { Crud, CrudController } from '@nestjsx/crud';
 import { Company } from './company.entity';
 import { CompaniesService } from './companies.service';
@@ -9,6 +9,7 @@ import { CompaniesService } from './companies.service';
   },
 })
 @Controller('companies')
+@UsePipes(ValidationPipe)
 export class CompaniesController implements CrudController<Company> {
   constructor(public service: CompaniesService) {}
 }

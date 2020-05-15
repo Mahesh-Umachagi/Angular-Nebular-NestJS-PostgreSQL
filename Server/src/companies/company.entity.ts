@@ -1,12 +1,26 @@
 import { Entity, Column } from 'typeorm';
 import { BaseEntity } from 'src/base-entity';
+import { IsString, IsNotEmpty, IsOptional, IsNumber } from 'class-validator';
 
 @Entity('companies')
 export class Company extends BaseEntity {
-  @Column({ type: 'varchar', length: 100, nullable: false })
+  @IsString()
+  @IsNotEmpty()
+  @Column()
   name: string;
-  @Column({ type: 'varchar', length: 100, nullable: true })
+
+  @IsString()
+  @IsNotEmpty()
+  @Column()
   domain: string;
-  @Column({ type: 'text', nullable: true, default: null })
+
+  @IsString()
+  @IsOptional()
+  @Column()
   description: string;
+
+  @IsNumber()
+  @IsOptional()
+  @Column()
+  contact: number;
 }
